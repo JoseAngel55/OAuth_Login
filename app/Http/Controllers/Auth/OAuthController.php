@@ -144,9 +144,7 @@ class OAuthController extends Controller
             'twitch'  => 'https://id.twitch.tv/oauth2/token',
         };
 
-        if ($provider === 'twitch') {
-            $payload['grant_type'] = 'authorization_code';
-        }
+        $payload['grant_type'] = 'authorization_code';
 
         $response = Http::asForm()->post($url, $payload);
 
